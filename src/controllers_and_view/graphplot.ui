@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GraphPlot</class>
+ <widget class="QDialog" name="GraphPlot">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Graph</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icon/icon.qrc">
+    <normaloff>:/Line-Chart.png</normaloff>:/Line-Chart.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(136, 136, 136);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout"/>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../icon/icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>
