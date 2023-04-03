@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include <utility>
 #include <vector>
+#include <string>
 
 namespace s21 {
 
@@ -43,8 +44,6 @@ class Model {
   void Clear();
   std::string ToString();
   CalculationError SolveEquation(double *result, double x);
-
-//  QLineSeries *GetSeriesOfSolveEquation(int xAxisSize);
 
  private:
   typedef enum TypeOfChar {

@@ -180,11 +180,6 @@ Model::CalcTypeError Model::PushBack(char symbol) {
       break;
   }
   _expression.push_back(std::make_pair(symbol, type_symbol));
-  if (type_symbol == FUNCTION_OPER) {
-    if (PushBack('(')) {
-      return OVER_FLOW_EXP;
-    }
-  }
   return NO_ERROR;
 }
 
@@ -195,11 +190,6 @@ void Model::PopBack() {
     --_brackets;
   }
   _expression.pop_back();
-  if (!Empty()) {
-    if (_expression.back().second == FUNCTION_OPER) {
-      _expression.pop_back();
-    }
-  }
 }
 
 bool Model::AddNewExp(std::string exp) {
@@ -479,15 +469,3 @@ Model::CalculationError Model::SolveEquation(double *result, double x) {
   *result = numbers.top();
   return SUCCESS;
 }
-
-//QLineSeries *Model::GetSeriesOfSolveEquation(int xAxisSize) {
-//  QLineSeries *series = new QLineSeries();
-//  double increment = xAxisSize / 10000.;
-//  double result;
-//  for (double i = -xAxisSize; i < xAxisSize; i += increment) {
-//    if (!SolveEquation(&result, i)) {
-//      *series << QPointF(i, result);
-//    }
-//  }
-//  return series;
-//}

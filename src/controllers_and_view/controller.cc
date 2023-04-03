@@ -59,7 +59,7 @@ void Controller::on_buttonGraph_clicked() {
       double increment = xAxisSize / 10000.;
       double result;
       for (double i = -xAxisSize; i < xAxisSize; i += increment) {
-        if (!SolveEquation(&result, i)) {
+        if (!data.SolveEquation(&result, i)) {
           *series << QPointF(i, result);
         }
       }
