@@ -229,6 +229,16 @@ calc.SolveEquation(&res, 0);
 EXPECT_DOUBLE_EQ(res, -5);
 }
 
+TEST(SmartCalc, solve_exp8) {
+s21::Model calc;
+calc.AddNewExp("l256");
+EXPECT_TRUE(calc.IsValid());
+EXPECT_FALSE(calc.Empty());
+double res{};
+calc.SolveEquation(&res, 0);
+EXPECT_DOUBLE_EQ(res, 2.4082399653118496);
+}
+
 TEST(SmartCalc, exp_err) {
 s21::Model calc;
 EXPECT_FALSE(calc.AddNewExp("1..2"));
@@ -282,32 +292,60 @@ EXPECT_TRUE(calc.AddNewExp("lnqsicota0.5mp"));
 EXPECT_STREQ("loglnsqrtsinasincosacostanatan0.5modπ", calc.ToString().c_str());
 }
 
-//TEST(DebitCalc, test1) {
-// s21::DebitData debit;
-// debit.DepositCalculation()
-//}
-//
-//TEST(DebitCalc, test2) {
-// s21::DebitData debit;
-//}
+TEST(DebitCalc, test1_with_capitalization) {
+ s21::DebitData debit;
+ std::vector<std::pair<int, double>> insertion, erase;
+ insertion.push_back({2, 50000});
+ erase.push_back({5, 10000});
+ debit.DepositCalculation(insertion, erase, 300000, 13, 25, 13, 2, true);
+EXPECT_NEAR(debit.total_amount, 444433.3499405, 1e-7);
+EXPECT_NEAR(debit.interest_charges, 104433.3499405, 1e-7);
+EXPECT_NEAR(debit.tax_amount, 197.1688256, 1e-7);
+}
+
+TEST(DebitCalc, test1_without_capitalization) {
+s21::DebitData debit;
+std::vector<std::pair<int, double>> insertion, erase;
+insertion.push_back({2, 5000});
+erase.push_back({5, 5000});
+debit.DepositCalculation(insertion, erase, 10000, 6, 20, 13, 1, false);
+EXPECT_NEAR(debit.total_amount, 10000, 1e-7);
+EXPECT_NEAR(debit.interest_charges, 1250, 1e-7);
+EXPECT_NEAR(debit.tax_amount, 0, 1e-7);
+}
 
 TEST(CreditCalc, testDiff1) {
  s21::CreditData credit;
  EXPECT_TRUE(credit.CreditDifferentiated(1000, 12, 9));
- EXPECT_DOUBLE_EQ(credit.all_payment, 1048.75);
- EXPECT_DOUBLE_EQ(credit.month_pay_first, 90.833333333333343);
- EXPECT_DOUBLE_EQ(credit.month_pay_last, 83.958333333333329);
- EXPECT_DOUBLE_EQ(credit.overpayment, 48.750000000000227);
+EXPECT_NEAR(credit.all_payment, 1048.75, 1e-7);
+ EXPECT_NEAR(credit.month_pay_first, 90.83333333, 1e-7);
+EXPECT_NEAR(credit.month_pay_last, 83.9583333, 1e-7);
+EXPECT_NEAR(credit.overpayment, 48.75, 1e-7);
 }
 
 TEST(CreditCalc, testDiff2) {
- s21::CreditData debit;
+ s21::CreditData credit;
+EXPECT_TRUE(credit.CreditDifferentiated(100456, 24, 12));
+EXPECT_NEAR(credit.all_payment, 113013, 1e-7);
+EXPECT_NEAR(credit.month_pay_first, 5190.2266666, 1e-7);
+EXPECT_NEAR(credit.month_pay_last, 4227.5233333, 1e-7);
+EXPECT_NEAR(credit.overpayment, 12557, 1e-7);
 }
 
 TEST(CreditCalc, testAnn1) {
  s21::CreditData credit;
+EXPECT_TRUE(credit.CreditAnnuity(56743, 18, 15));
+EXPECT_NEAR(credit.all_payment, 63718.1997081, 1e-7);
+EXPECT_NEAR(credit.month_pay_first, 3539.8999837, 1e-7);
+EXPECT_NEAR(credit.month_pay_last, 3539.8999837, 1e-7);
+EXPECT_NEAR(credit.overpayment, 6975.1997081, 1e-7);
 }
 
 TEST(CreditCalc, testAnn2) {
- s21::CreditData debit;
+ s21::CreditData credit;
+EXPECT_TRUE(credit.CreditAnnuity(76142761, 6, 11));
+EXPECT_NEAR(credit.all_payment, 78604249.762625, 1e-7);
+EXPECT_NEAR(credit.month_pay_first, 13100708.2937708, 1e-7);
+EXPECT_NEAR(credit.month_pay_last, 13100708.2937708, 1e-7);
+EXPECT_NEAR(credit.overpayment, 2461488.762625, 1e-7);
 }
