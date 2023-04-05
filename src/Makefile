@@ -34,9 +34,12 @@ uninstall:
 
 dist: clean
 	@mkdir -p ../dist
-	tar -czfv . ../dist/source_code.tar.gz
+	tar cvzf ../dist/source_code.tar.gz .
+
+style:
+	@clang-format -n -style=google $(shell find . \( -name "*.cc" -or -name "*.h" \))
 
 clean:
 	@echo "Cleaning..."
-	@rm -rf ../report *.gc* models/*.gc* test ../build ../dist
+	@rm -rf ../report *.gc* models/*.gc* test ../build ../dist logs
 	@echo "Clean is done"
