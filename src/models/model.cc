@@ -168,6 +168,8 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         return INCOMPLETE_EXP;
       }
       --_brackets;
+    default:
+      break;
   }
   _expression.push_back(std::make_pair(symbol, type_symbol));
   return NO_ERROR;

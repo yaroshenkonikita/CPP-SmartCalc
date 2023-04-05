@@ -5,7 +5,7 @@ using namespace s21;
 double DebitData::GetMoneyFromArray(
     std::vector<std::pair<int, double>> &array_month_money, int count_month) {
   double buf = 0;
-  for (int i = 0; i < array_month_money.size(); i++) {
+  for (std::size_t i = 0; i < array_month_money.size(); i++) {
     if (array_month_money[i].first == count_month) {
       buf += array_month_money[i].second;
     }
