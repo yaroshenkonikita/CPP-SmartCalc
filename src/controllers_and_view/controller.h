@@ -4,9 +4,9 @@
 #include <QMainWindow>
 
 #include "../models/model.h"
-#include "graphplot.h"
 #include "creditcalc.h"
 #include "debitcalc.h"
+#include "graphplot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,7 +27,6 @@ class Controller : public QMainWindow {
   void on_buttonGraph_clicked();
   void on_buttonC_clicked();
   void on_buttonCE_clicked();
-  void on_buttonPI_clicked();
   void on_buttonRES_clicked();
 
   void AnyButtonClick();
@@ -35,7 +34,7 @@ class Controller : public QMainWindow {
   void on_openCreditCalc_clicked();
   void on_openDebitCalc_clicked();
 
-private:
+ private:
   Ui::Controller *ui;
   Model data;
 };

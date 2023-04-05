@@ -7,19 +7,22 @@
 namespace s21 {
 
 struct DebitData {
-    DebitData() = default;
-    ~DebitData() = default;
+  DebitData() = default;
+  ~DebitData() = default;
 
-    bool DepositCalculation(std::vector<std::pair<int, double>> &array_insert, std::vector<std::pair<int, double>> &array_erase, double original_amount, double term,
-                           double interest, double tax, int accrual_period, bool capitalization);
+  bool DepositCalculation(std::vector<std::pair<int, double>> &array_insert,
+                          std::vector<std::pair<int, double>> &array_erase,
+                          double original_amount, double term, double interest,
+                          double tax, int accrual_period, bool capitalization);
 
-    double interest_charges{},
-    tax_amount{},
-    total_amount{};
-private:
-    double GetMoneyFromArray(std::vector<std::pair<int, double>> &array_month_money, int count_month);
+  double interest_charges{}, tax_amount{}, total_amount{};
+
+ private:
+  static constexpr double key_rate = 7.5 / 100.;
+  double GetMoneyFromArray(
+      std::vector<std::pair<int, double>> &array_month_money, int count_month);
 };
 
-} // namespace s21
+}  // namespace s21
 
-#endif // DEBITDATA_H_
+#endif  // DEBITDATA_H_

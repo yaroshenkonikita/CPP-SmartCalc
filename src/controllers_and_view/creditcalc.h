@@ -2,6 +2,8 @@
 #define CREDITCALC_H_
 
 #include <QDialog>
+#include <QMessageBox>
+
 #include "../models/creditdata.h"
 
 namespace Ui {
@@ -10,27 +12,25 @@ class CreditCalc;
 
 namespace s21 {
 
-class CreditCalc : public QDialog
-{
-    Q_OBJECT
+class CreditCalc : public QDialog {
+  Q_OBJECT
 
-public:
-    explicit CreditCalc(QWidget *parent = nullptr);
-    ~CreditCalc();
+ public:
+  explicit CreditCalc(QWidget *parent = nullptr);
+  ~CreditCalc();
 
-private slots:
-    void on_diffButton_clicked();
+ private slots:
+  void on_diffButton_clicked();
 
-    void on_AnnButton_clicked();
+  void on_AnnButton_clicked();
 
-private:
-    Ui::CreditCalc *ui;
-    CreditData data;
+ private:
+  Ui::CreditCalc *ui;
+  CreditData data;
 
-    void GetValuesFromData();
-    void Error();
+  void GetValuesFromData();
 };
 
-} // namespace s21
+}  // namespace s21
 
-#endif // CREDITCALC_H_
+#endif  // CREDITCALC_H_

@@ -6,18 +6,17 @@
 namespace s21 {
 
 struct CreditData {
-    CreditData() = default;
-    ~CreditData() = default;
+  CreditData() = default;
+  ~CreditData() = default;
 
-    bool CreditAnnuity(double amount_payment, double time_credit, double pay_percentage);
-    bool CreditDifferentiated(double amount_payment, double time_credit, double pay_percentage);
+  bool CreditAnnuity(double amount_payment, double time_credit,
+                     double pay_percentage);
+  bool CreditDifferentiated(double amount_payment, double time_credit,
+                            double pay_percentage);
 
-    double month_pay_first{},
-    month_pay_last{},
-    overpayment{},
-    all_payment{};
+  double month_pay_first{}, month_pay_last{}, overpayment{}, all_payment{};
 };
 
-} // namespace s21
+}  // namespace s21
 
-#endif // CREDITDATA_H_
+#endif  // CREDITDATA_H_

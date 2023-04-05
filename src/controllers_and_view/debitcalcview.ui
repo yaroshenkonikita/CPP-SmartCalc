@@ -60,8 +60,14 @@
          <property name="suffix">
           <string> руб.</string>
          </property>
+         <property name="minimum">
+          <double>1.000000000000000</double>
+         </property>
          <property name="maximum">
           <double>10000000000000000155594161294668430242682013969210614333697705804308337811647557032649853899150474476762062808678400.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>1000.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -189,6 +195,9 @@
            <property name="maximum">
             <double>999.000000000000000</double>
            </property>
+           <property name="value">
+            <double>20.000000000000000</double>
+           </property>
           </widget>
          </item>
          <item>
@@ -253,6 +262,9 @@
          </property>
          <property name="maximum">
           <double>100.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>13.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -2473,7 +2485,7 @@ QPushButton:pressed  {
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="periodicityPayment"/>
   <buttongroup name="termDeposit"/>
+  <buttongroup name="periodicityPayment"/>
  </buttongroups>
 </ui>

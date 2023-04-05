@@ -762,7 +762,7 @@ QPushButton:pressed  {
 }</string>
           </property>
           <property name="text">
-           <string>π</string>
+           <string>π p</string>
           </property>
          </widget>
         </item>

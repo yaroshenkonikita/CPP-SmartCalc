@@ -1,4 +1,5 @@
 #include "controller.h"
+
 #include "ui_view.h"
 
 using namespace s21;
@@ -41,35 +42,71 @@ Controller::Controller(QWidget *parent)
   connect(ui->buttonATAN, SIGNAL(clicked()), this, SLOT(AnyButtonClick()));
 
   connect(ui->buttonE, SIGNAL(clicked()), this, SLOT(AnyButtonClick()));
+  connect(ui->buttonPI, SIGNAL(clicked()), this, SLOT(AnyButtonClick()));
   connect(ui->buttonX, SIGNAL(clicked()), this, SLOT(AnyButtonClick()));
 }
 
 void Controller::AnyButtonClick() {
-  data.PushBack(((QPushButton *)sender())->text().toStdString().back());
-  ui->expressionLabel->setText(QString::fromStdString(data.ToString()));
+  switch (
+      data.PushBack(((QPushButton *)sender())->text().toStdString().back())) {
+    case Model::DOT_FOR_CONST:
+      QMessageBox::warning(this, "Ошибка",
+                           "Невозможно установить точность к константе");
+      break;
+    case Model::DOUBLE_DOT:
+      QMessageBox::warning(
+          this, "Ошибка",
+          "В этом числе уже есть точка, двойная точность невозможна");
+      break;
+    case Model::DOUBLE_OPER:
+      QMessageBox::warning(
+          this, "Ошибка",
+          "Нельзя применить бинарный оператор к бинарному оператору");
+      break;
+    case Model::OPER_FOR_NEW_EXP:
+      QMessageBox::warning(this, "Ошибка",
+                           "Нет первого аргумента для бинарного оператора");
+      break;
+    case Model::BRACKET_MINUS:
+      QMessageBox::warning(this, "Ошибка",
+                           "Невозможные скобочные представления");
+      break;
+    case Model::OVER_FLOW_EXP:
+      QMessageBox::warning(
+          this, "Ошибка",
+          "Размер строки переполнен, максимальное значение 255 символов");
+      break;
+    case Model::INCOMPLETE_EXP:
+      QMessageBox::warning(this, "Ошибка",
+                           "Невозможно закончить скобочное уравнение, "
+                           "требуется поставить значение");
+      break;
+    default:
+      ui->expressionLabel->setText(QString::fromStdString(data.ToString()));
+  };
 }
 
 Controller::~Controller() { delete ui; }
 
 void Controller::on_buttonGraph_clicked() {
   if (data.IsValid()) {
-      QLineSeries *series = new QLineSeries();
-      int xAxisSize = ui->spinBox_X_AXIS->value(),
-      yAxisSize = ui->spinBox_Y_AXIS->value();
-      double increment = xAxisSize / 10000.;
-      double result;
-      for (double i = -xAxisSize; i < xAxisSize; i += increment) {
-        if (!data.SolveEquation(&result, i)) {
-          *series << QPointF(i, result);
-        }
+    QLineSeries *series = new QLineSeries();
+    int xAxisSize = ui->spinBox_X_AXIS->value(),
+        yAxisSize = ui->spinBox_Y_AXIS->value();
+    double increment = xAxisSize / 10000.;
+    double result;
+    for (double i = -xAxisSize; i < xAxisSize; i += increment) {
+      if (!data.SolveEquation(&result, i)) {
+        *series << QPointF(i, result);
       }
+    }
 
     GraphPlot graph(series, xAxisSize, yAxisSize);
     graph.exec();
     on_buttonC_clicked();
   } else {
     data.Clear();
-    ui->expressionLabel->setText("Ошибка");
+    QMessageBox::warning(this, "Ошибка", "Не правильное уравнение");
   }
 }
 
@@ -85,11 +122,6 @@ void Controller::on_buttonCE_clicked() {
   }
 }
 
-void Controller::on_buttonPI_clicked() {
-  data.PushBack('p');
-  ui->expressionLabel->setText(QString::fromStdString(data.ToString()));
-}
-
 void Controller::on_buttonRES_clicked() {
   double result = 0;
   Model::CalculationError error =
@@ -98,7 +130,6 @@ void Controller::on_buttonRES_clicked() {
     data.AddNewExp(QString::number(result, 'f', 7).toStdString());
     ui->expressionLabel->setText(QString::fromStdString(data.ToString()));
   } else {
-    data.Clear();
     QString error_text;
     switch (error) {
       case Model::WRONG_EXP:
@@ -119,24 +150,17 @@ void Controller::on_buttonRES_clicked() {
         break;
       case Model::DIV_ZERO:
         error_text = "Деление на ноль, невозможно";
-        break;
-      default:
-        break;
     }
-    ui->expressionLabel->setText(error_text);
+    QMessageBox::warning(this, "Ошибка", error_text);
   }
 }
 
-void Controller::on_openCreditCalc_clicked()
-{
-    CreditCalc credit;
-    credit.exec();
+void Controller::on_openCreditCalc_clicked() {
+  CreditCalc credit;
+  credit.exec();
 }
 
-
-void Controller::on_openDebitCalc_clicked()
-{
-    DebitCalc debit;
-    debit.exec();
+void Controller::on_openDebitCalc_clicked() {
+  DebitCalc debit;
+  debit.exec();
 }
-

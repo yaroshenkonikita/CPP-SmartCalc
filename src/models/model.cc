@@ -80,7 +80,7 @@ bool Model::IsValid() {
 Model::CalcTypeError Model::PushBack(char symbol) {
   if (_expression.size() == 255) return OVER_FLOW_EXP;
   if (symbol == ',') {
-      symbol = '.';
+    symbol = '.';
   }
   CalcTypeSymbol type_symbol = WhatIsSymbol(symbol);
   switch (type_symbol) {
@@ -88,18 +88,14 @@ Model::CalcTypeError Model::PushBack(char symbol) {
       if (!Empty()) {
         if (BackType() == DOT || BackType() == NUMBER ||
             BackType() == NUMBER_AFTER_DOT || BackType() == CONST) {
-          if (PushBack('*')) {
-            return OVER_FLOW_EXP;
-          }
+          PushBack('*') if (_expression.size() == 255) return OVER_FLOW_EXP;
         }
       }
       break;
     case NUMBER:
       if (!Empty()) {
         if (BackType() == CONST || BackType() == END_EXP) {
-          if (PushBack('*')) {
-            return OVER_FLOW_EXP;
-          }
+          PushBack('*') if (_expression.size() == 255) return OVER_FLOW_EXP;
         }
       }
       break;
@@ -107,9 +103,7 @@ Model::CalcTypeError Model::PushBack(char symbol) {
       if (Empty() || BackType() == UNAR_OPER || BackType() == LOW_OPER ||
           BackType() == MIDDLE_OPER || BackType() == HIGH_OPER ||
           BackType() == FUNCTION_OPER || BackType() == NEW_EXP) {
-        if (PushBack('0')) {
-          return OVER_FLOW_EXP;
-        }
+        PushBack('0') if (_expression.size() == 255) return OVER_FLOW_EXP;
       }
       if (BackType() == CONST || BackType() == END_EXP) {
         return DOT_FOR_CONST;
@@ -132,9 +126,7 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         return DOUBLE_OPER;
       }
       if (BackType() == DOT) {
-        if (PushBack('0')) {
-          return OVER_FLOW_EXP;
-        }
+        PushBack('0') if (_expression.size() == 255) return OVER_FLOW_EXP;
       }
       break;
     case FUNCTION_OPER:
@@ -142,9 +134,7 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         if (BackType() == DOT || BackType() == NUMBER ||
             BackType() == NUMBER_AFTER_DOT || BackType() == CONST ||
             BackType() == END_EXP) {
-          if (PushBack('*')) {
-            return OVER_FLOW_EXP;
-          }
+          PushBack('*') if (_expression.size() == 255) return OVER_FLOW_EXP;
         }
       }
       break;
@@ -153,9 +143,7 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         if (BackType() == DOT || BackType() == NUMBER ||
             BackType() == NUMBER_AFTER_DOT || BackType() == CONST ||
             BackType() == END_EXP) {
-          if (PushBack('*')) {
-            return OVER_FLOW_EXP;
-          }
+          PushBack('*') if (_expression.size() == 255) return OVER_FLOW_EXP;
         }
       }
       ++_brackets;
@@ -165,9 +153,7 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         return BRACKET_MINUS;
       }
       if (BackType() == DOT) {
-        if (PushBack('0')) {
-          return OVER_FLOW_EXP;
-        }
+        PushBack('0') if (_expression.size() == 255) return OVER_FLOW_EXP;
       }
       if (BackType() == UNAR_OPER || BackType() == LOW_OPER ||
           BackType() == MIDDLE_OPER || BackType() == HIGH_OPER ||
@@ -175,9 +161,6 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         return INCOMPLETE_EXP;
       }
       --_brackets;
-      break;
-    default:
-      break;
   }
   _expression.push_back(std::make_pair(symbol, type_symbol));
   return NO_ERROR;
@@ -259,7 +242,6 @@ std::string Model::ToString() {
         break;
       default:
         exp.push_back(item.first);
-        break;
     }
   }
   if (exp.empty()) {
@@ -353,7 +335,6 @@ Model::CalculationError Model::UseOneOperFromStack(
         tmp = numbers.top();
         numbers.pop();
         numbers.top() = pow(numbers.top(), tmp);
-        break;
     }
     operators.pop();
   }
@@ -454,10 +435,8 @@ Model::CalculationError Model::SolveEquation(double *result, double x) {
                 }
               }
               operators.pop();
-              break;
           }
         }
-        break;
     }
   }
   while (!operators.empty()) {

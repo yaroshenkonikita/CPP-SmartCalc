@@ -1,4 +1,5 @@
 #include "graphplot.h"
+
 #include "ui_graphplot.h"
 
 using namespace s21;

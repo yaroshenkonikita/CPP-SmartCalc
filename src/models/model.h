@@ -4,9 +4,9 @@
 #include <cmath>
 #include <stack>
 #include <stdexcept>
+#include <string>
 #include <utility>
 #include <vector>
-#include <string>
 
 namespace s21 {
 
