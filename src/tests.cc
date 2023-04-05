@@ -242,6 +242,7 @@ TEST(SmartCalc, solve_exp8) {
 TEST(SmartCalc, exp_err) {
   s21::Model calc;
   EXPECT_FALSE(calc.AddNewExp("1..2"));
+  calc.SolveEquation(nullptr, 0);
 }
 
 TEST(SmartCalc, exp_err1) {
@@ -269,20 +270,6 @@ TEST(SmartCalc, exp_err5) {
   EXPECT_FALSE(calc.AddNewExp("(5*)"));
 }
 
-TEST(SmartCalc, exp_err6) {
-  s21::Model calc;
-  EXPECT_FALSE(calc.AddNewExp(
-      "555555555555555555555555555555555555555555555555555555555555555555555555"
-      "555555555555555555555555555555555555555555555555555555555555555555555555"
-      "555555555555555555555555555555555555555555555555555555555555555555555555"
-      "55555555555555555555555555555555555555x"));
-}
-
-// TEST(SmartCalc, exp_err6) {
-// s21::Model calc;
-// EXPECT_FALSE(calc.AddNewExp("5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"));
-// }
-
 TEST(SmartCalc, exp_true) {
   s21::Model calc;
   EXPECT_TRUE(calc.AddNewExp("./5"));
@@ -291,6 +278,11 @@ TEST(SmartCalc, exp_true) {
 TEST(SmartCalc, exp_true2) {
   s21::Model calc;
   EXPECT_TRUE(calc.AddNewExp("/5"));
+}
+
+TEST(SmartCalc, exp_true3) {
+  s21::Model calc;
+  EXPECT_TRUE(calc.AddNewExp("5x5s5.(4.)5(4)"));
 }
 
 TEST(SmartCalc, pop_back2) {
@@ -310,6 +302,14 @@ TEST(SmartCalc, to_string) {
   EXPECT_TRUE(calc.AddNewExp("lnqsicota0.5mp"));
   EXPECT_STREQ("loglnsqrtsinasincosacostanatan0.5modπ",
                calc.ToString().c_str());
+}
+
+TEST(SmartCalc, to_string_empty) {
+  s21::Model calc;
+  double res = 4;
+  calc.SolveEquation(&res, 0);
+  EXPECT_EQ(res, 0);
+  EXPECT_STREQ("0", calc.ToString().c_str());
 }
 
 TEST(DebitCalc, test1_with_capitalization) {

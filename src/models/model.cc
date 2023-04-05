@@ -88,14 +88,16 @@ Model::CalcTypeError Model::PushBack(char symbol) {
       if (!Empty()) {
         if (BackType() == DOT || BackType() == NUMBER ||
             BackType() == NUMBER_AFTER_DOT || BackType() == CONST) {
-          PushBack('*') if (_expression.size() == 255) return OVER_FLOW_EXP;
+          PushBack('*');
+          if (_expression.size() == 255) return OVER_FLOW_EXP;
         }
       }
       break;
     case NUMBER:
       if (!Empty()) {
         if (BackType() == CONST || BackType() == END_EXP) {
-          PushBack('*') if (_expression.size() == 255) return OVER_FLOW_EXP;
+          PushBack('*');
+          if (_expression.size() == 255) return OVER_FLOW_EXP;
         }
       }
       break;
@@ -103,7 +105,8 @@ Model::CalcTypeError Model::PushBack(char symbol) {
       if (Empty() || BackType() == UNAR_OPER || BackType() == LOW_OPER ||
           BackType() == MIDDLE_OPER || BackType() == HIGH_OPER ||
           BackType() == FUNCTION_OPER || BackType() == NEW_EXP) {
-        PushBack('0') if (_expression.size() == 255) return OVER_FLOW_EXP;
+        PushBack('0');
+        if (_expression.size() == 255) return OVER_FLOW_EXP;
       }
       if (BackType() == CONST || BackType() == END_EXP) {
         return DOT_FOR_CONST;
@@ -126,7 +129,8 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         return DOUBLE_OPER;
       }
       if (BackType() == DOT) {
-        PushBack('0') if (_expression.size() == 255) return OVER_FLOW_EXP;
+        PushBack('0');
+        if (_expression.size() == 255) return OVER_FLOW_EXP;
       }
       break;
     case FUNCTION_OPER:
@@ -134,7 +138,8 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         if (BackType() == DOT || BackType() == NUMBER ||
             BackType() == NUMBER_AFTER_DOT || BackType() == CONST ||
             BackType() == END_EXP) {
-          PushBack('*') if (_expression.size() == 255) return OVER_FLOW_EXP;
+          PushBack('*');
+          if (_expression.size() == 255) return OVER_FLOW_EXP;
         }
       }
       break;
@@ -143,7 +148,8 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         if (BackType() == DOT || BackType() == NUMBER ||
             BackType() == NUMBER_AFTER_DOT || BackType() == CONST ||
             BackType() == END_EXP) {
-          PushBack('*') if (_expression.size() == 255) return OVER_FLOW_EXP;
+          PushBack('*');
+          if (_expression.size() == 255) return OVER_FLOW_EXP;
         }
       }
       ++_brackets;
@@ -153,7 +159,8 @@ Model::CalcTypeError Model::PushBack(char symbol) {
         return BRACKET_MINUS;
       }
       if (BackType() == DOT) {
-        PushBack('0') if (_expression.size() == 255) return OVER_FLOW_EXP;
+        PushBack('0');
+        if (_expression.size() == 255) return OVER_FLOW_EXP;
       }
       if (BackType() == UNAR_OPER || BackType() == LOW_OPER ||
           BackType() == MIDDLE_OPER || BackType() == HIGH_OPER ||
