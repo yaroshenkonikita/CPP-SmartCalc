@@ -45,12 +45,12 @@ void GraphPlot::PrintAxis(int xAxisSize, int yAxisSize) {
   yAxis->setRange(-yAxisSize, yAxisSize);
 
   seriesAxis = new QLineSeries();
-  seriesAxis->append(0, -yAxisSize);
-  seriesAxis->append(0, yAxisSize);
+  seriesAxis->append(0, -xAxisSize);
+  seriesAxis->append(0, xAxisSize);
   seriesAxis->append(0, 0);
 
-  seriesAxis->append(-xAxisSize, 0);
-  seriesAxis->append(xAxisSize, 0);
+  seriesAxis->append(-yAxisSize, 0);
+  seriesAxis->append(yAxisSize, 0);
   seriesAxis->setColor("Green");
 
   chart->addSeries(seriesAxis);

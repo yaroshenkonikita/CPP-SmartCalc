@@ -101,7 +101,7 @@ void Controller::on_buttonGraph_clicked() {
       }
     }
 
-    GraphPlot graph(series, xAxisSize, yAxisSize);
+    GraphPlot graph(series, yAxisSize, xAxisSize);
     graph.exec();
     on_buttonC_clicked();
   } else {
