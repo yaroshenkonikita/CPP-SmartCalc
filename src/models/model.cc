@@ -16,7 +16,7 @@ Model::CalcTypeSymbol Model::WhatIsSymbol(char symbol) {
     case '-':
       if (Empty() || BackType() == Model::LOW_OPER ||
           BackType() == Model::MIDDLE_OPER || BackType() == Model::HIGH_OPER ||
-          BackType() == Model::NEW_EXP) {
+          BackType() == Model::NEW_EXP || BackType() == Model::FUNCTION_OPER) {
         return Model::UNAR_OPER;
       }
       return Model::LOW_OPER;
@@ -310,7 +310,7 @@ Model::CalculationError Model::UseOneOperFromStack(
         numbers.top() = atan(numbers.top());
         break;
       case 'm':
-        if (numbers.top() < 1e-6) {
+        if (std::fabs(numbers.top()) < 1e-6) {
           return DIV_ZERO;
         }
         tmp = numbers.top();
@@ -318,7 +318,7 @@ Model::CalculationError Model::UseOneOperFromStack(
         numbers.top() = fmod(numbers.top(), tmp);
         break;
       case '/':
-        if (numbers.top() < 1e-6) {
+        if (std::fabs(numbers.top()) < 1e-6) {
           return DIV_ZERO;
         }
         tmp = numbers.top();
