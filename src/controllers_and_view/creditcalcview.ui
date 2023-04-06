@@ -18,7 +18,7 @@
     <normaloff>:/Credit-Calculator.png</normaloff>:/Credit-Calculator.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(94, 94, 94);</string>
+   <string notr="true">background-color: rgb(109, 109, 109);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -33,7 +33,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>200</width>
+         <width>250</width>
          <height>16777215</height>
         </size>
        </property>
@@ -93,7 +93,7 @@ background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="maximumSize">
         <size>
-         <width>200</width>
+         <width>250</width>
          <height>16777215</height>
         </size>
        </property>
@@ -207,7 +207,7 @@ background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="maximumSize">
         <size>
-         <width>200</width>
+         <width>250</width>
          <height>16777215</height>
         </size>
        </property>
@@ -273,7 +273,7 @@ background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="maximumSize">
         <size>
-         <width>200</width>
+         <width>250</width>
          <height>16777215</height>
         </size>
        </property>
@@ -324,7 +324,7 @@ background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="maximumSize">
         <size>
-         <width>200</width>
+         <width>250</width>
          <height>16777215</height>
         </size>
        </property>
@@ -375,7 +375,7 @@ background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="maximumSize">
         <size>
-         <width>200</width>
+         <width>250</width>
          <height>16777215</height>
         </size>
        </property>

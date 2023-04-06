@@ -24,7 +24,7 @@
     <normaloff>:/Credit-Calculator.png</normaloff>:/Credit-Calculator.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(44, 44, 44);</string>
+   <string notr="true">background-color: rgb(109, 109, 109);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -39,7 +39,8 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
          </property>
          <property name="text">
           <string> Сумма вклада</string>
@@ -55,7 +56,8 @@
           </sizepolicy>
          </property>
          <property name="styleSheet">
-          <string>color: rgb(255, 255, 255);</string>
+          <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
          </property>
          <property name="suffix">
           <string> руб.</string>
@@ -83,7 +85,8 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
          </property>
          <property name="text">
           <string> Срок размещения</string>
@@ -101,7 +104,8 @@
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string>color: rgb(255, 255, 255);</string>
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
            </property>
            <property name="suffix">
             <string> у.е.</string>
@@ -123,7 +127,8 @@
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string>color: rgb(255, 255, 255);</string>
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
            </property>
            <property name="text">
             <string>Лет</string>
@@ -145,7 +150,8 @@
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string>color: rgb(255, 255, 255);</string>
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
            </property>
            <property name="text">
             <string>Месяцев</string>
@@ -169,7 +175,8 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
          </property>
          <property name="text">
           <string> Процентная ставка</string>
@@ -187,7 +194,8 @@
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);</string>
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
            </property>
            <property name="suffix">
             <string> %</string>
@@ -217,7 +225,8 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);</string>
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
            </property>
            <property name="text">
             <string>Капитализация
@@ -239,7 +248,8 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
          </property>
          <property name="text">
           <string> Ставка налога</string>
@@ -255,7 +265,8 @@
           </sizepolicy>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
          </property>
          <property name="suffix">
           <string> %</string>
@@ -280,7 +291,8 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
          </property>
          <property name="text">
           <string> Периодичность выплат</string>
@@ -298,7 +310,8 @@
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string>color: rgb(255, 255, 255);</string>
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
            </property>
            <property name="text">
             <string>Раз в год</string>
@@ -314,7 +327,8 @@
          <item>
           <widget class="QRadioButton" name="periodicityPaymentRadioButtonHalfYear">
            <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);</string>
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
            </property>
            <property name="text">
             <string>Раз в пол года</string>
@@ -333,7 +347,8 @@
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string>color: rgb(255, 255, 255);</string>
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
            </property>
            <property name="text">
             <string>Раз в месяц</string>
@@ -361,7 +376,8 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
          </property>
          <property name="text">
           <string> Список пополнений</string>
@@ -392,6 +408,7 @@
           <string notr="true">QTabWidget::pane {
     border: 1px solid black;
     background: white;
+	color: rgb(0, 0, 0);
 }
 
 QTabWidget::tab-bar:top {
@@ -507,7 +524,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -528,7 +546,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -553,7 +572,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Сумма пополнения</string>
@@ -574,7 +594,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -613,7 +634,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -634,7 +656,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -659,7 +682,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Сумма пополнения</string>
@@ -680,7 +704,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -719,7 +744,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -740,7 +766,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -765,7 +792,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Сумма пополнения</string>
@@ -786,7 +814,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -825,7 +854,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -846,7 +876,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -871,7 +902,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Сумма пополнения</string>
@@ -892,7 +924,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -931,7 +964,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -952,7 +986,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -977,7 +1012,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Сумма пополнения</string>
@@ -998,7 +1034,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -1037,7 +1074,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -1058,7 +1096,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -1083,7 +1122,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Сумма пополнения</string>
@@ -1104,7 +1144,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -1143,7 +1184,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -1164,7 +1206,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -1189,7 +1232,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Сумма пополнения</string>
@@ -1210,7 +1254,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -1249,7 +1294,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -1270,7 +1316,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -1295,7 +1342,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Сумма пополнения</string>
@@ -1316,7 +1364,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -1345,7 +1394,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
          </property>
          <property name="text">
           <string> Список частичных выводов</string>
@@ -1376,6 +1426,7 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
           <string notr="true">QTabWidget::pane {
     border: 1px solid black;
     background: white;
+	color: rgb(0, 0, 0);
 }
 
 QTabWidget::tab-bar:top {
@@ -1491,7 +1542,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -1512,7 +1564,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -1537,10 +1590,11 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
-                 <string>Сумма пополнения</string>
+                 <string>Сумма вывода</string>
                 </property>
                </widget>
               </item>
@@ -1558,7 +1612,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -1597,7 +1652,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -1618,7 +1674,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -1643,10 +1700,11 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
-                 <string>Сумма пополнения</string>
+                 <string>Сумма вывода</string>
                 </property>
                </widget>
               </item>
@@ -1664,7 +1722,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -1703,7 +1762,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -1724,7 +1784,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -1749,10 +1810,11 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
-                 <string>Сумма пополнения</string>
+                 <string>Сумма вывода</string>
                 </property>
                </widget>
               </item>
@@ -1770,7 +1832,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -1809,7 +1872,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -1830,7 +1894,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -1855,10 +1920,11 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
-                 <string>Сумма пополнения</string>
+                 <string>Сумма вывода</string>
                 </property>
                </widget>
               </item>
@@ -1876,7 +1942,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -1915,7 +1982,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -1936,7 +2004,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -1961,10 +2030,11 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
-                 <string>Сумма пополнения</string>
+                 <string>Сумма вывода</string>
                 </property>
                </widget>
               </item>
@@ -1982,7 +2052,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -2021,7 +2092,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -2042,7 +2114,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -2067,10 +2140,11 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
-                 <string>Сумма пополнения</string>
+                 <string>Сумма вывода</string>
                 </property>
                </widget>
               </item>
@@ -2088,7 +2162,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -2127,7 +2202,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -2148,7 +2224,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -2173,10 +2250,11 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
-                 <string>Сумма пополнения</string>
+                 <string>Сумма вывода</string>
                 </property>
                </widget>
               </item>
@@ -2194,7 +2272,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -2233,7 +2312,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
                  <string>Номер месяца(1-600)</string>
@@ -2254,7 +2334,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> у.е.</string>
@@ -2279,10 +2360,11 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="text">
-                 <string>Сумма пополнения</string>
+                 <string>Сумма вывода</string>
                 </property>
                </widget>
               </item>
@@ -2300,7 +2382,8 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
                 </property>
                 <property name="suffix">
                  <string> руб.</string>
@@ -2385,7 +2468,8 @@ QPushButton:pressed  {
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="text">
         <string>0.0</string>
@@ -2403,7 +2487,8 @@ QPushButton:pressed  {
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="text">
         <string> Начисленные проценты, руб.</string>
@@ -2418,7 +2503,8 @@ QPushButton:pressed  {
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="text">
         <string> Налог, руб.</string>
@@ -2433,7 +2519,8 @@ QPushButton:pressed  {
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="text">
         <string>0.0</string>
@@ -2451,7 +2538,8 @@ QPushButton:pressed  {
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="text">
         <string> Сумма на вкладе к концу срока, руб.</string>
@@ -2466,7 +2554,8 @@ QPushButton:pressed  {
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
        </property>
        <property name="text">
         <string>0.0</string>
@@ -2485,7 +2574,7 @@ QPushButton:pressed  {
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="termDeposit"/>
   <buttongroup name="periodicityPayment"/>
+  <buttongroup name="termDeposit"/>
  </buttongroups>
 </ui>
