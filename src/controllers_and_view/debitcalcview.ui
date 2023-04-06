@@ -1,0 +1,2580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DebitCalc</class>
+ <widget class="QDialog" name="DebitCalc">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1277</width>
+    <height>565</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>565</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>DebitCalc</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icon/icon.qrc">
+    <normaloff>:/Credit-Calculator.png</normaloff>:/Credit-Calculator.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(109, 109, 109);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="inputValuesLayout">
+     <item>
+      <layout class="QHBoxLayout" name="amountDepositLayout">
+       <item>
+        <widget class="QLabel" name="amountDepositLabel">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+         </property>
+         <property name="text">
+          <string> Сумма вклада</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="amountDepositDoubleSpinBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+         </property>
+         <property name="suffix">
+          <string> руб.</string>
+         </property>
+         <property name="minimum">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>10000000000000000155594161294668430242682013969210614333697705804308337811647557032649853899150474476762062808678400.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>1000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="termLayout">
+       <item>
+        <widget class="QLabel" name="termLabel">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+         </property>
+         <property name="text">
+          <string> Срок размещения</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="termInputLayout">
+         <item>
+          <widget class="QSpinBox" name="termAmount">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+           </property>
+           <property name="suffix">
+            <string> у.е.</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>50</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="termRadioButtonYear">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+           </property>
+           <property name="text">
+            <string>Лет</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">termDeposit</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="termRadioButtonMonth">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+           </property>
+           <property name="text">
+            <string>Месяцев</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">termDeposit</string>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="procentageLayout">
+       <item>
+        <widget class="QLabel" name="procentageLabel">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+         </property>
+         <property name="text">
+          <string> Процентная ставка</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="procentageInputLayout">
+         <item>
+          <widget class="QDoubleSpinBox" name="procentageDoubleSpinBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+           </property>
+           <property name="suffix">
+            <string> %</string>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>20.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="procentageCapitalizationCheckBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Copperplate</family>
+             <pointsize>8</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+           </property>
+           <property name="text">
+            <string>Капитализация
+процентов</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="taxLayout">
+       <item>
+        <widget class="QLabel" name="taxLabel">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+         </property>
+         <property name="text">
+          <string> Ставка налога</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="taxDoubleSpinBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+         </property>
+         <property name="suffix">
+          <string> %</string>
+         </property>
+         <property name="maximum">
+          <double>100.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>13.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="periodicityPaymentLayout">
+       <item>
+        <widget class="QLabel" name="periodicityPaymentLabel">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+         </property>
+         <property name="text">
+          <string> Периодичность выплат</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="periodicityPaymentInputLayout">
+         <item>
+          <widget class="QRadioButton" name="periodicityPaymentRadioButtonYear">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+           </property>
+           <property name="text">
+            <string>Раз в год</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">periodicityPayment</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="periodicityPaymentRadioButtonHalfYear">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+           </property>
+           <property name="text">
+            <string>Раз в пол года</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">periodicityPayment</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="periodicityPaymentRadioButtonMonth">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string>color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+           </property>
+           <property name="text">
+            <string>Раз в месяц</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">periodicityPayment</string>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="withdrawalsAndDepositLayout">
+     <item>
+      <layout class="QVBoxLayout" name="depositLayout">
+       <item>
+        <widget class="QLabel" name="depositlabel">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+         </property>
+         <property name="text">
+          <string> Список пополнений</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTabWidget" name="depositTabWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>145</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>160</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTabWidget::pane {
+    border: 1px solid black;
+    background: white;
+	color: rgb(0, 0, 0);
+}
+
+QTabWidget::tab-bar:top {
+    top: 1px;
+}
+
+QTabWidget::tab-bar:bottom {
+    bottom: 1px;
+}
+
+QTabWidget::tab-bar:left {
+    right: 1px;
+}
+
+QTabWidget::tab-bar:right {
+    left: 1px;
+}
+
+QTabBar::tab {
+    border: 1px solid black;
+}
+
+QTabBar::tab:selected {
+    background: white;
+}
+
+QTabBar::tab:!selected {
+    background: silver;
+}
+
+QTabBar::tab:!selected:hover {
+    background: #999;
+}
+
+QTabBar::tab:top:!selected {
+    margin-top: 3px;
+}
+
+QTabBar::tab:bottom:!selected {
+    margin-bottom: 3px;
+}
+
+QTabBar::tab:top, QTabBar::tab:bottom {
+    min-width: 8ex;
+    margin-right: -1px;
+    padding: 5px 10px 5px 10px;
+}
+
+QTabBar::tab:top:selected {
+    border-bottom-color: none;
+}
+
+QTabBar::tab:bottom:selected {
+    border-top-color: none;
+}
+
+QTabBar::tab:top:last, QTabBar::tab:bottom:last,
+QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one {
+    margin-right: 0;
+}
+
+QTabBar::tab:left:!selected {
+    margin-right: 3px;
+}
+
+QTabBar::tab:right:!selected {
+    margin-left: 3px;
+}
+
+QTabBar::tab:left, QTabBar::tab:right {
+    min-height: 8ex;
+    margin-bottom: -1px;
+    padding: 10px 5px 10px 5px;
+}
+
+QTabBar::tab:left:selected {
+    border-left-color: none;
+}
+
+QTabBar::tab:right:selected {
+    border-right-color: none;
+}
+
+QTabBar::tab:left:last, QTabBar::tab:right:last,
+QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
+    margin-bottom: 0;
+}</string>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="depositTab1">
+          <attribute name="title">
+           <string>1</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_9">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="depositTabLayout1">
+            <item>
+             <layout class="QHBoxLayout" name="monthDepositLayout1">
+              <item>
+               <widget class="QLabel" name="monthDepositLabel1">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthDepositSpinBox1">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountDepositMiddleLayout1">
+              <item>
+               <widget class="QLabel" name="amountDepositMiddleLabel1">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма пополнения</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountDepositMiddleDoubleSpinBox1">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="depositTab2">
+          <attribute name="title">
+           <string>2</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="depositTabLayout2">
+            <item>
+             <layout class="QHBoxLayout" name="monthDepositLayout2">
+              <item>
+               <widget class="QLabel" name="monthDepositLabel2">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthDepositSpinBox2">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountDepositMiddleLayout2">
+              <item>
+               <widget class="QLabel" name="amountDepositMiddleLabel2">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма пополнения</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountDepositMiddleDoubleSpinBox2">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="depositTab3">
+          <attribute name="title">
+           <string>3</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="depositTabLayout3">
+            <item>
+             <layout class="QHBoxLayout" name="monthDepositLayout3">
+              <item>
+               <widget class="QLabel" name="monthDepositLabel3">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthDepositSpinBox3">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountDepositMiddleLayout3">
+              <item>
+               <widget class="QLabel" name="amountDepositMiddleLabel3">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма пополнения</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountDepositMiddleDoubleSpinBox3">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="depositTab4">
+          <attribute name="title">
+           <string>4</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_4">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="depositTabLayout4">
+            <item>
+             <layout class="QHBoxLayout" name="monthDepositLayout4">
+              <item>
+               <widget class="QLabel" name="monthDepositLabel4">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthDepositSpinBox4">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountDepositMiddleLayout4">
+              <item>
+               <widget class="QLabel" name="amountDepositMiddleLabel4">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма пополнения</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountDepositMiddleDoubleSpinBox4">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="depositTab5">
+          <attribute name="title">
+           <string>5</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_5">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="depositTabLayout5">
+            <item>
+             <layout class="QHBoxLayout" name="monthDepositLayout5">
+              <item>
+               <widget class="QLabel" name="monthDepositLabel5">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthDepositSpinBox5">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountDepositMiddleLayout5">
+              <item>
+               <widget class="QLabel" name="amountDepositMiddleLabel5">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма пополнения</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountDepositMiddleDoubleSpinBox5">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="depositTab6">
+          <attribute name="title">
+           <string>6</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_6">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="depositTabLayout6">
+            <item>
+             <layout class="QHBoxLayout" name="monthDepositLayout6">
+              <item>
+               <widget class="QLabel" name="monthDepositLabel6">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthDepositSpinBox6">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountDepositMiddleLayout6">
+              <item>
+               <widget class="QLabel" name="amountDepositMiddleLabel6">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма пополнения</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountDepositMiddleDoubleSpinBox6">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="depositTab7">
+          <attribute name="title">
+           <string>7</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_7">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="depositTabLayout7">
+            <item>
+             <layout class="QHBoxLayout" name="monthDepositLayout7">
+              <item>
+               <widget class="QLabel" name="monthDepositLabel7">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthDepositSpinBox7">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountDepositMiddleLayout7">
+              <item>
+               <widget class="QLabel" name="amountDepositMiddleLabel7">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма пополнения</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountDepositMiddleDoubleSpinBox7">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="depositTab8">
+          <attribute name="title">
+           <string>8</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_8">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="depositTabLayout8">
+            <item>
+             <layout class="QHBoxLayout" name="monthDepositLayout8">
+              <item>
+               <widget class="QLabel" name="monthDepositLabel8">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthDepositSpinBox8">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountDepositMiddleLayout8">
+              <item>
+               <widget class="QLabel" name="amountDepositMiddleLabel8">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма пополнения</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountDepositMiddleDoubleSpinBox8">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="withdrawalsLayout">
+       <item>
+        <widget class="QLabel" name="withdrawalLabel">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+         </property>
+         <property name="text">
+          <string> Список частичных выводов</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTabWidget" name="withdrawalTabWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>145</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>160</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTabWidget::pane {
+    border: 1px solid black;
+    background: white;
+	color: rgb(0, 0, 0);
+}
+
+QTabWidget::tab-bar:top {
+    top: 1px;
+}
+
+QTabWidget::tab-bar:bottom {
+    bottom: 1px;
+}
+
+QTabWidget::tab-bar:left {
+    right: 1px;
+}
+
+QTabWidget::tab-bar:right {
+    left: 1px;
+}
+
+QTabBar::tab {
+    border: 1px solid black;
+}
+
+QTabBar::tab:selected {
+    background: white;
+}
+
+QTabBar::tab:!selected {
+    background: silver;
+}
+
+QTabBar::tab:!selected:hover {
+    background: #999;
+}
+
+QTabBar::tab:top:!selected {
+    margin-top: 3px;
+}
+
+QTabBar::tab:bottom:!selected {
+    margin-bottom: 3px;
+}
+
+QTabBar::tab:top, QTabBar::tab:bottom {
+    min-width: 8ex;
+    margin-right: -1px;
+    padding: 5px 10px 5px 10px;
+}
+
+QTabBar::tab:top:selected {
+    border-bottom-color: none;
+}
+
+QTabBar::tab:bottom:selected {
+    border-top-color: none;
+}
+
+QTabBar::tab:top:last, QTabBar::tab:bottom:last,
+QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one {
+    margin-right: 0;
+}
+
+QTabBar::tab:left:!selected {
+    margin-right: 3px;
+}
+
+QTabBar::tab:right:!selected {
+    margin-left: 3px;
+}
+
+QTabBar::tab:left, QTabBar::tab:right {
+    min-height: 8ex;
+    margin-bottom: -1px;
+    padding: 10px 5px 10px 5px;
+}
+
+QTabBar::tab:left:selected {
+    border-left-color: none;
+}
+
+QTabBar::tab:right:selected {
+    border-right-color: none;
+}
+
+QTabBar::tab:left:last, QTabBar::tab:right:last,
+QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
+    margin-bottom: 0;
+}</string>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="withdrawalTab1">
+          <attribute name="title">
+           <string>1</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_10">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="withdrawalTabLayout1">
+            <item>
+             <layout class="QHBoxLayout" name="monthWithdrawalLayout1">
+              <item>
+               <widget class="QLabel" name="monthWithdrawalLabel1">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthWithdrawalSpinBox1">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountWithdrawalMiddleLayout1">
+              <item>
+               <widget class="QLabel" name="amountWithdrawalMiddleLabel1">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма вывода</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountWithdrawalMiddleDoubleSpinBox1">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="withdrawalTab2">
+          <attribute name="title">
+           <string>2</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_11">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="withdrawalTabLayout2">
+            <item>
+             <layout class="QHBoxLayout" name="monthWithdrawalLayout2">
+              <item>
+               <widget class="QLabel" name="monthWithdrawalLabel2">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthWithdrawalSpinBox2">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountWithdrawalMiddleLayout2">
+              <item>
+               <widget class="QLabel" name="amountWithdrawalMiddleLabel2">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма вывода</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountWithdrawalMiddleDoubleSpinBox2">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="withdrawalTab3">
+          <attribute name="title">
+           <string>3</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_12">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="withdrawalTabLayout3">
+            <item>
+             <layout class="QHBoxLayout" name="monthWithdrawalLayout3">
+              <item>
+               <widget class="QLabel" name="monthWithdrawalLabel3">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthWithdrawalSpinBox3">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountWithdrawalMiddleLayout3">
+              <item>
+               <widget class="QLabel" name="amountWithdrawalMiddleLabel3">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма вывода</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountWithdrawalMiddleDoubleSpinBox3">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="withdrawalTab4">
+          <attribute name="title">
+           <string>4</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_13">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="withdrawalTabLayout4">
+            <item>
+             <layout class="QHBoxLayout" name="monthWithdrawalLayout4">
+              <item>
+               <widget class="QLabel" name="monthWithdrawalLabel4">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthWithdrawalSpinBox4">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountWithdrawalMiddleLayout4">
+              <item>
+               <widget class="QLabel" name="amountWithdrawalMiddleLabel4">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма вывода</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountWithdrawalMiddleDoubleSpinBox4">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="withdrawalTab5">
+          <attribute name="title">
+           <string>5</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_14">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="withdrawalTabLayout5">
+            <item>
+             <layout class="QHBoxLayout" name="monthWithdrawalLayout5">
+              <item>
+               <widget class="QLabel" name="monthWithdrawalLabel5">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthWithdrawalSpinBox5">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountWithdrawalMiddleLayout5">
+              <item>
+               <widget class="QLabel" name="amountWithdrawalMiddleLabel5">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма вывода</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountWithdrawalMiddleDoubleSpinBox5">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="withdrawalTab6">
+          <attribute name="title">
+           <string>6</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_15">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="withdrawalTabLayout6">
+            <item>
+             <layout class="QHBoxLayout" name="monthWithdrawalLayout6">
+              <item>
+               <widget class="QLabel" name="monthWithdrawalLabel6">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthWithdrawalSpinBox6">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountWithdrawalMiddleLayout6">
+              <item>
+               <widget class="QLabel" name="amountWithdrawalMiddleLabel6">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма вывода</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountWithdrawalMiddleDoubleSpinBox6">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="withdrawalTab7">
+          <attribute name="title">
+           <string>7</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_16">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="withdrawalTabLayout7">
+            <item>
+             <layout class="QHBoxLayout" name="monthWithdrawalLayout7">
+              <item>
+               <widget class="QLabel" name="monthWithdrawalLabel7">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthWithdrawalSpinBox7">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountWithdrawalMiddleLayout7">
+              <item>
+               <widget class="QLabel" name="amountWithdrawalMiddleLabel7">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма вывода</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountWithdrawalMiddleDoubleSpinBox7">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="withdrawalTab8">
+          <attribute name="title">
+           <string>8</string>
+          </attribute>
+          <widget class="QWidget" name="layoutWidget_17">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>381</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="withdrawalTabLayout8">
+            <item>
+             <layout class="QHBoxLayout" name="monthWithdrawalLayout8">
+              <item>
+               <widget class="QLabel" name="monthWithdrawalLabel8">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Номер месяца(1-600)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="monthWithdrawalSpinBox8">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> у.е.</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>600</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="amountWithdrawalMiddleLayout8">
+              <item>
+               <widget class="QLabel" name="amountWithdrawalMiddleLabel8">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Сумма вывода</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="amountWithdrawalMiddleDoubleSpinBox8">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="suffix">
+                 <string> руб.</string>
+                </property>
+                <property name="maximum">
+                 <double>999999999999999926539781176481198923508803215199467887262646419780362305536.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="resultButton">
+     <property name="font">
+      <font>
+       <pointsize>24</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(77, 77, 77);
+	border-radius: 15px;
+}
+QPushButton:pressed  {
+	color: rgb(255, 255, 255);
+	background-color: rgb(52, 52, 52);
+	border-radius: 15px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Посчитать</string>
+     </property>
+     <property name="shortcut">
+      <string notr="true"/>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="resultOutputLayout">
+     <item row="0" column="1">
+      <widget class="QLabel" name="procentageAmountOutputLabel">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="procentageAmountLabel">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+       </property>
+       <property name="text">
+        <string> Начисленные проценты, руб.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="taxAmountLabel">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+       </property>
+       <property name="text">
+        <string> Налог, руб.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="taxAmountOutputLabel">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="totalAmountLabel">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+       </property>
+       <property name="text">
+        <string> Сумма на вкладе к концу срока, руб.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="totalAmountOutputLabel">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(77, 77, 77);</string>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../icon/icon.qrc"/>
+ </resources>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="periodicityPayment"/>
+  <buttongroup name="termDeposit"/>
+ </buttongroups>
+</ui>
