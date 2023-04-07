@@ -44,6 +44,7 @@ gcov_report: tests
 uninstall:
 	@echo "Uninstalling start..."
 	@rm -rf ../$(APP)
+	@-rm ~/Desktop/$(PROJECT_NAME).app
 	@echo "Uninstalling success"
 
 dvi:
